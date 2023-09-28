@@ -109,28 +109,14 @@ module.exports = function(env, arg) {
         module: {
             rules: [
                 {
-                    test: /\.(sass|scss|css)$/,
+                    test: /\.s[ac]ss$/i,
                     use: [
-                        isProduction
-                            ? MiniCssExtractPlugin.loader
-                            : 'style-loader',
+                        'style-loader',
                         'css-loader',
-                        {
-                            loader: 'sass-loader',
-                            options: { implementation: require('sass') }
-                        }
+                        'sass-loader'
                     ],
                 },
-                {
-                    test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*)?$/,
-                    use: ['file-loader']
-                },
-                {
-                    test: /\.js$/,
-                    enforce: 'pre',
-                    use: ['source-map-loader'],
-                }
-            ]
+            ],
         }
     };
 };

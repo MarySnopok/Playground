@@ -6,7 +6,7 @@ open Fable.Core.JsInterop
 
 module App =
 
-    //importSideEffects "./global.sass"
+    importSideEffects "./styles/global.sass"
     //importAll"flatpickr/dist/themes/material_green.css"
 
     #if DEBUG

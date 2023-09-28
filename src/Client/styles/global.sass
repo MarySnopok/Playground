@@ -1,0 +1,117 @@
+$primary: rgb(255, 182, 182)
+$secondary: #11263f
+$background: #ffffff73
+$primaryTransparent: rgba(255, 182, 182, 0.77)
+$statsContainer: #eff0f1d1
+$highlight: #1bbe9b
+
+*
+    box-sizing: border-box
+
+html, body
+    margin: 0
+    padding: o
+    background-color: $background
+    font-family: "DM Sans", sans-serif
+    font-weight: 500
+    letter-spacing: 1px
+    color: $secondary
+    height: 100vh
+    width: 100vw
+    max-height: 100vh
+    max-width: 100vw
+
+.logo
+    z-index: 30
+
+.logo img:first-child
+    width: 146px
+    height: 56px
+    padding: 10px
+
+input
+    max-height: 80%
+    width: 212px !important
+
+.background-overlay
+    display: flex
+    flex-direction: column
+    justify-content: stretch
+    align-items: center
+
+.background-overlay
+    .hero img:first-child
+        width: 100%
+        height: 100%
+        z-index: 0
+        margin: 0
+        top: 0
+        left: 0
+        position: fixed
+
+.hero
+    overlay: hidden
+    position: absolute
+    display: block
+    max-width: 767px
+    max-height: 100vh
+    width: auto
+    height: auto
+
+hero img:first-child
+    display: flex
+    background-position: center
+    background-repeat: no-repeat
+    object-fit: cover
+    opacity: 0.6
+
+.nav-wrapper
+
+.numeric-stats
+    font-weight: 800
+    font-size: 14px
+    color: white
+
+.btn-text
+    font-size: 16px
+    color: $secondary
+    font-weight: 600
+    margin: 2px
+    z-index: 100
+
+.loader
+    border: 6px solid $highlight
+    border-radius: 50%
+    animation: 1s loader linear infinite
+    position: relative
+    width: 100px
+    height: 100px
+    margin-top: 46px
+    &:before
+        content: ""
+        display: block
+        width: 10px
+        height: 10px
+        position: absolute
+        top: -.2em
+        left: 50%
+        border: .6em solid $primary
+        border-radius: 50%
+
+@keyframes loader
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+//Tablet and desktop
+@media (min-width: 768px)
+    input
+        max-height: 100%
+    .select-wrapper
+        margin-left: 18px
+    .nav-wrapper
+        height: calc(100vh / 3.5)
+    .logo img:first-child
+        width: 246px
+        height: 180px
